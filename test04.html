@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{            
+            height: 50px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>속담 바꾸기</h1>
+    <div id="box">
+        <p>현재 속담: <span id="p1"></span></p>    
+    </div>
+    <form action="">
+        <label for="in">새로운 속담 입력:</label>
+        <input type="text" name="" id="in">
+        <button type="button" onclick="intext()">바꾸기</button>
+
+        <script>
+            function intext(){
+                function co(){
+                    document.getElementById("box").innerHTML = "<div style = 'background-color:#000;'>"+"</div>";
+                }
+                
+                var te = document.getElementById("in").value;
+                document.getElementById("p1").innerHTML = "<span style = 'color:#fff;background-color:#ccc;'>" + te + "</span>";
+                
+                var t = document.getElementById("in");
+                t.value = null;
+
+            }            
+        </script>
+    </form>
+</body>
+</html>

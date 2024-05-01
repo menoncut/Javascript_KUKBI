@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 500px;
+            margin: 10px auto;
+        }
+        #cup{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="container">
+        <img src="cup-1.png" alt="" id="cup">
+    </div>
+
+    <script>
+        /*let cup = document.getElementById("cup");
+        cup.onclick = function(){
+            cup.src="cup-2.png";
+        }*/
+        
+        
+        /*let cup = document.getElementById("cup");
+        cup.onclick = function(){
+            alert("이벤트 유형 : " + event.type);*/
+            
+        let cup = document.getElementById("cup");
+        cup.onclick = function(){
+        alert("클릭한 이미지 파일 : " + this.src);
+        }
+    </script>
+</body>
+</html>

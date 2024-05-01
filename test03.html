@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="rCount" value="">
+    </form>
+
+    <script>
+        function drawTable(){
+            var rCount = document.querySelector("#rCount").value;
+            var cCount = document.querySelector("#cCount").value;
+
+            var newTable = document.createElement("table");
+            for(i=0; i < rCount; i++){
+                var newRow = document.createElement("tr");
+                for(j=0; j < cCount; j++){
+                    var newCell = document.createElement("td");
+                    var cellText = document.createTextNode(i + ", " + j);
+                    newCell.appendChild(cellText);
+                    newRow.appendChild(newCell);
+                }
+                newTable.appendChild(newRow);
+            }
+            var contents = document.querySelector("#contents");
+            contents.appendChild(newTable);
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>자바스크립트 while loop</h2>
+    <p>모범답안</p>
+    <p id="ex">답안</p>
+    <script>
+        var text = '';
+        var i = 1;
+        var sum = 0;
+
+        while (i < 101) {
+            if (i % 2 == 0) {
+                text +='<br>순서'+i;
+            }
+            i++;
+            sum += i;      
+        }
+        document.getElementById("ex").innerHTML = text;
+        document.write('1~100까지의 합은 '+sum);
+    </script>
+</body>
+</html>

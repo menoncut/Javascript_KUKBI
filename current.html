@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습예제1</title>
+    <style>
+        body {
+            background-color: skyblue;
+        }
+        span {
+            font-size: 25pt;
+            font-weight: bold;
+            color: blue;
+        }
+        #p1 {
+            font-size: 20pt;
+            color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <p id="p1">현재 시각: <span id="current" class="display"></span></p>
+    <script>
+        setInterval(displayNow, 1000);
+
+        function displayNow(){
+            let date= new Date();
+            let currentTime = date.toLocaleTimeString();
+
+            document.querySelector("#current").innerHTML = currentTime;
+        }
+    </script>
+</body>
+</html>

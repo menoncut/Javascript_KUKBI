@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 300px;
+            height: 300px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+
+    <script>
+        var boxColor = document.getElementById("box");
+
+        boxColor.addEventListener("mouseover", colorChange1, false);
+        boxColor.addEventListener("mouseout", colorChange2, false);
+        boxColor.addEventListener("click", colorChange3, false);
+
+        function colorChange1(){
+            boxColor.style.backgroundColor="yellow";
+            boxColor.style.borderRadius="500px"
+        }
+        
+        function colorChange2(){
+            boxColor.style.backgroundColor="green";
+            boxColor.style.borderRadius="0px"
+        }
+        
+        function colorChange3(){
+            boxColor.style.backgroundColor="aqua";
+            boxColor.style.borderRadius="50px"
+            
+        }
+    </script>
+</body>
+</html>

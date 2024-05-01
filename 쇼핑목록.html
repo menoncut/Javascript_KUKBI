@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {padding: 0; margin: 0;}
+        h1 {
+            margin-bottom: 15px;
+        }
+        #head {
+            color: deeppink;
+            font-style: italic;
+        }
+        #itemInput:hover {
+            border: 2px solid hotpink;
+        }
+        button {
+            background-color: greenyellow;
+            border: 1px solid blue;
+            font-size: 10pt;
+        }
+        button:hover {
+            background-color: deeppink;
+            color: #fff;
+            border: 0;
+        }
+        li {      
+            list-style: decimal;
+            color: lime;
+            font-size: 20px;
+            font-weight: bold;           
+            margin-top: 10px;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <h1>쇼핑 <span id="head">☆목록</span></h1>
+
+    <form action="" id="shoppingForm">
+        <label for="itemInput">물건:</label>
+        <input type="text" id="itemInput" required>
+        <button type="submit">추가</button>
+    </form>
+
+    <ul id="shoppingList"></ul>
+
+    <script>
+        let shoppingListArry = [];
+
+        //폼 제출 이벤트 발생
+        document.getElementById("shoppingForm").addEventListener("submit", function(e){
+            e.preventDefault(); //새로운 페이지 새로고침 방지
+
+            //입력된 물건을 가져오기
+            let itemInput = document.getElementById("itemInput");
+            let item = itemInput.value;
+
+            shoppingListArry.push(item);  //입력된 문건을 배열에 추가
+            itemInput.value = "";  //입력필드 값 초기화
+
+            updateShoppingList();            
+        })
+
+        //아이템 삭제 함수
+        function removeShoplist(index){
+            shoppingListArry.splice(index, 1);
+            updateShoppingList();
+        }
+
+        function updateShoppingList(){
+            let shoppingListElement = document.getElementById("shoppingList");
+
+            shoppingListElement.textContent = '';
+
+            for (let i = 0; i < shoppingListArry.length; i++){                
+                let item = shoppingListArry[i];
+                let listitem = document.createElement('li');
+                listitem.textContent = item;
+                var deleteButton = document.createElement('button');
+                deleteButton.textContent = '삭제';
+                deleteButton.setAttribute('onclick', 'removeShoplist(' + i + ')');
+                listitem.appendChild(deleteButton);
+                shoppingListElement.appendChild(listitem);
+            }
+        }
+    </script>
+
+</body>
+</html>

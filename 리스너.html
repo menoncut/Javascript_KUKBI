@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 500px;
+            margin: 10px auto;
+        }
+        #cup{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="easys-1.jpg" alt="" id="cover">
+        
+    </div>
+
+    <script>
+        /*let cover = document.getElementById("cover");
+        cover.addEventListener('mouseover', change2, false);
+        cover.addEventListener('mouseout', change1, false);
+        cover.addEventListener('click', change3, false);
+        
+
+        function change2(){
+            cover.src="easys-2.jpg";
+        }
+        
+        function change1(){
+            cover.src="easys-1.jpg";
+        }
+        
+        function change3(){
+            cover.src="easys-1.jpg";
+            cover.style.width="1000px";            
+        }*/
+
+
+        let cover = document.getElementById("cover");
+
+        cover.addEventListener("mouseover", function(){
+            cover.src="easys-2.jpg";
+        });
+        
+   
+        cover.addEventListener("mouseout", function(){
+            cover.src="easys-1.jpg";
+        });
+
+
+        /*let cup = document.getElementById("cup");
+        cup.onclick = function(){
+            alert("이벤트 유형 : " + event.type);*/
+            
+        /*let cup = document.getElementById("cup");
+        cup.onclick = function(){
+        alert("클릭한 이미지 파일 : " + this.src);
+        }*/
+    </script>
+</body>
+</html>

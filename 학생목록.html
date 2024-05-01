@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생목록</title>
+</head>
+<body>
+    <h1>학생 목록</h1>
+
+    <form action="" id="studentForm">
+        <label for="nameInput">이름:</label>
+        <input type="text" name="" id="nameInput" required>
+        <button type="submit">추가</button>
+        <button onclick="javascript:window.close();">닫기</button>
+    </form>
+    <ul id="studentList"></ul>
+
+    <script>
+        let studentListArry = [];
+
+        //폼 제출 이벤트 발생
+        document.getElementById("studentForm").addEventListener("submit", function(e){
+            e.preventDefault(); //새로운 페이지 새로고침 방지
+
+            //입력된 물건을 가져오기
+            let stuInput = document.getElementById("nameInput");
+            let stu = stuInput.value;
+
+            studentListArry.push(stu);  //입력된 문건을 배열에 추가
+            stuInput.value = "";  //입력필드 값 초기화
+
+            updateStudentList();            
+        })
+
+        //아이템 삭제 함수
+        function removeStudentlist(index){
+            studentListArry.splice(index, 1);
+            updateStudentList();
+        }
+
+        function updateStudentList(){
+            let studentListElement = document.getElementById("studentList");
+
+            studentListElement.textContent = '';
+
+            for (let i = 0; i <studentListArry.length; i++){                
+                let stu = studentListArry[i];
+                let studlist = document.createElement('li');
+                studlist.textContent = stu;
+                var deleteButton = document.createElement('button');
+                deleteButton.textContent = '삭제';
+                deleteButton.setAttribute('onclick', 'removeStudentlist(' + i + ')');
+                studlist.appendChild(deleteButton);
+                studentListElement.appendChild(studlist);
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>

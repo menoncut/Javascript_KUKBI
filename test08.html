@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>노드추가</title>
+</head>
+<body>
+    <h2>노드 추가 삭제</h2>
+    <p>dfdfdfd dfdffd dfdfdf1</p>
+    <p>dfdfdfd dfdffd dfdfdf2</p>
+    <p>dfdfdfd dfdffd dfdfdf3</p>
+    
+    <button onclick="btn1()">1버튼입니다.</button>
+    <button onclick="btn2()">2버튼입니다.</button>
+    <button onclick="btn3()">3버튼입니다.</button>
+    <button onclick="myFun(); this.onclick='';">4버튼입니다.</button>
+
+    <p id="out"></p>
+
+    <script>
+        function btn1(){
+            let list = document.querySelectorAll("p");
+
+            /*for(let i = 0; i < list.length; i++){
+                list[i].style.color = 'red';
+            }*/            
+
+            document.getElementById("out").innerHTML = list[0].textContent;
+            var p1 = list[0].textContent;
+            
+        }
+
+        function btn2(){
+            let list = document.querySelectorAll("p");
+            document.getElementById("out").innerHTML = list[1].textContent;
+        }
+
+        function btn3(){
+            let list = document.querySelectorAll("p");
+            document.getElementById("out").innerHTML = list[2].textContent;
+        }
+
+
+        function myFun(){
+            let list = document.querySelectorAll("p");
+            for (let i =0; i < list.length; i++){
+                document.getElementById("out").innerHTML += list[i].textContent + "<br>";
+            }
+        }
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

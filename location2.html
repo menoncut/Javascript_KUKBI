@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location2_이벤트공지</title>
+    <style>
+        #container {
+            width: 600px;
+            margin: 10px auto;
+            padding: 10px;
+            text-align: center;
+        }
+        img {
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>이벤트공지</h1>
+        <img src="펜션.jpg" alt="">
+        <p><a href="학생목록.html" onclick="loadURL(this.href);return false;">자세히보기</a></p>
+    </div>
+
+    <script>
+        function loadURL(url){
+            window.opener.location = url; //부모창의 location에 url을 넘겨준다
+            window.close();  //현재창을 닫는다.
+        }
+    </script>
+</body>
+</html>

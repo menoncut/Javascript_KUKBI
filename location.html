@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location</title>
+</head>
+<body>
+    <h2>객체 이동하기</h2>
+    
+        <button onclick="location.replace('http://daum.net')">홈페이지 이동하기</button><br>
+        <button onclick="window.open('http://daum.net','_blank')">새창으로 이동하기</button><br>
+
+    <script>
+        document.write("현재 파일 위치 : "+location.href + "<br>");
+        document.write("내주소와 포트번호 : "+location.host + "<br>");
+        document.write("쓰고있는 통신프로토콜 : "+location.protocol); 
+    </script>
+</body>
+</html>
